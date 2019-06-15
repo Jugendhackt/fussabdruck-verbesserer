@@ -7,27 +7,18 @@ data: {
 //Fragen-Variablen
 
 question:'placeholder',
-answerA:'placeholder',
-answerB:'placeholder',
-answerC:'placeholder',
-answerD: 'placeholder',
-
-//Test Datensatz (Fragen)
 
 zaehler:-1,
-frage1:'Wer bin ich?',
-frage2: 'Wann bin ich?',
 
 //Datensatz zum Schluss
 daten:[],
-
-anzahlInputs:0,
 
 },
 
 created: function(){
     this.fragen();
     this.save();
+    this.alpaka();
 
 },
 
@@ -36,6 +27,9 @@ mounted: function(){
 },
 
 methods: {
+    alpaka() {
+
+    },
     save() {
         var answers = [];
         var array = document.getElementsByTagName("input")
@@ -57,8 +51,9 @@ methods: {
 this.zaehler = this.zaehler + 1; 
 this.save();    
 document.getElementById("Antworten").innerHTML = "";
+var url = "http://127.0.0.1:5000/fragebogen/";
 axios
-.get("test.json")
+.get(url)
 .then(response => {
     console.log('JSON Datei: ', response);
     console.log('zaehler: ', this.zaehler);
@@ -69,7 +64,7 @@ axios
 
     if (this.zaehler < laenge) {
 
-        this.question = fragen[this.zaehler].name;
+        this.question = fragen[this.zaehler].frage;
         
     for(var i = 0; i < fragen[this.zaehler].antworten.length; i++) {
         var answer = fragen[this.zaehler].antworten[i];
@@ -93,7 +88,7 @@ axios
         else {
             this.question = "Auswertung!";
             // Daten los schicken!
-            axios.post('http://localhost:3030/api/new/post', 
+            axios.post('127.0.0.1:5000/fragebogen/',    //10.23.5.55
     this.daten, // the data to post
     { headers: {
       'Content-type': 'application/x-www-form-urlencoded',
@@ -102,7 +97,7 @@ axios
         var endText = document.createElement("a");
         endText.classList.add("a");
         document.getElementById("Antworten").appendChild(endText);
-        endText.innerText = response; // über response Text von der Verarbeitung abgreifen
+        endText.innerText = response.data; // über response Text von der Verarbeitung abgreifen
     }
     )}
 })
