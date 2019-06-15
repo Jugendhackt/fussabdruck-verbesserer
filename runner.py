@@ -17,11 +17,19 @@ def get_data():
     return {
         'data':[
             {
-                'frage':'',
+                'frage':'Treiben Sie Sport?',
                 'antworten':[
-                    '',
-                    '',
-                    ''
+                    'Ja',
+                    'Nein'
+                ]
+            },
+            {
+                'frage':'Wie oft essen Sie Fleisch?',
+                'antworten':[
+                    'täglich',
+                    'mehrmals wöchentlich',
+                    'einmal die Woche',
+                    'nie'
                 ]
             },
 
