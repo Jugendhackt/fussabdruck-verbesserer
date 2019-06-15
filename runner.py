@@ -45,7 +45,7 @@ def fragebogen_generieren():
     frage.add_answer('Nein', faktor = 0)
     fragebogen.append(frage)
 
-    frage = frage.Question('Auf wievielen Quadratmetern Wohnfläche leben Sie?', 1)
+    frage = fragen.Question('Auf wievielen Quadratmetern Wohnfläche leben Sie?', 1)
     frage.add_answer('bis 40', faktor = 5.8)
     frage.add_answer('40 - 60', faktor = 6.2)
     frage.add_answer('60 - 90', faktor = 6.6)
