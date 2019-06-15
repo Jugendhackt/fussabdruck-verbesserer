@@ -1,5 +1,7 @@
 from flask import Flask
 from flask import jsonify
+import fragen
+
 app = Flask(__name__)
 
 @app.route('/')
@@ -14,24 +16,11 @@ def json_ausgabe():
     return jsonify(d)
 
 def get_data():
-    return {
-        'data':[
-            {
-                'frage':'Treiben Sie Sport?',
-                'antworten':[
-                    'Ja',
-                    'Nein'
-                ]
-            },
-            {
-                'frage':'Wie oft essen Sie Fleisch?',
-                'antworten':[
-                    'täglich',
-                    'mehrmals wöchentlich',
-                    'einmal die Woche',
-                    'nie'
-                ]
-            },
+    questions = fragen.getQuestions()
+    result = []
+    for question in questions:
+        result.append(question.toJSON())
 
-        ]
+    return {
+        'data':result
     }
