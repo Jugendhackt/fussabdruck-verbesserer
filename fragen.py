@@ -19,7 +19,12 @@ class Question:
         return  {
             'frage':self.frage,
             'antworten':answers
-        },
+        }
+
+    def getAbdruck (self, answer_id):
+        answer = self.answers[answer_id]
+        return self.abdruck * answer.faktor
+
 
 class Answer:
 
@@ -37,7 +42,7 @@ def getQuestions():
     question.add_answer("ja", faktor=1.1)
     result.append(question)
 
-    question = Question('Wie lange duschst du', 9999)
+    question = Question('Wie lange duschst du', 999)
     question.add_answer("3 min", faktor=3)
     question.add_answer("5 min", faktor=5)
     question.add_answer("10 min", faktor=10)
@@ -52,9 +57,12 @@ def getQuestions():
     
     return result
 
+if __name__ == "__main__": 
+    questions = getQuestions()
+    result = []
+    for question in questions:
+        result.append(question.toJSON())
+    print(result)
 
-questions = getQuestions()
-result = []
-for question in questions:
-    result.append(question.toJSON)
-print(result)
+    abdruck = questions[0].getAbdruck(1) + questions[1].getAbdruck(0) + questions[2].getAbdruck(2)
+    print(abdruck)
