@@ -1,14 +1,21 @@
-from flask import Flask
-from flask import jsonify
+from flask import Flask, request, send_from_directory, jsonify
 import fragen
 
 app = Flask(__name__)
 
 @app.route('/')
 def hello_world():
+    return open('website/index.html').read().replace('"style.css', '"/website/style.css').replace('"javascript.js', '"/website/javascript.js')
+
+@app.route('/OLD')
+def hello_old_world():
     return '''<h2>Willkommen bei der Datenverarbeitung von FußabdruckVerbesserer!</h2> 
     Wir helfen ihnen  konkret und innovativ ihren Ressourcenverbrauch zu reduzieren 
     und zum Wohle aller, vor allem künftiger Generationen nachhaltiger zu leben.'''
+
+@app.route('/website/<path:path>')
+def send_resource(path):
+    return send_from_directory('website', path)
 
 
 def fragebogen_generieren():
