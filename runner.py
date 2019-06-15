@@ -6,9 +6,9 @@ app = Flask(__name__)
 def hello_world():
     return '''Hello, JugendHackt!
     
-    Den Senf kriegst du <a href="/senf">hier</a>.'''
+    Den Senf kriegst du <a href="/senf/">hier</a>.'''
 
-@app.route('/senf')
+@app.route('/senf/')
 def json_ausgabe():
     d = get_data()
     return jsonify(d)
