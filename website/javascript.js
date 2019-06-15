@@ -43,7 +43,7 @@ methods: {
             var x = array[i].checked;
         
             if (x == true) {
-                answers.push(i + 1);
+                answers.push(i);
             }
             console.log("array Länge", x);
             console.log("answer arrray", answers);
@@ -91,6 +91,7 @@ axios
     }
         }
         else {
+            this.question = "Auswertung!";
             // Daten los schicken!
             axios.post('http://localhost:3030/api/new/post', 
     this.name, // the data to post
