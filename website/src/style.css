@@ -25,7 +25,7 @@
 
 /* Allgemeines */
 body {
-    background-image: url(img/lama.gif);
+    background-image: url(../img/lama.gif);
     background-size: 60px 60px;
     max-width: 65em;
     margin: 0 auto;
@@ -45,7 +45,7 @@ h1 {
 
 
 #logo {
-    background-image: url(img/logo.png);
+    background-image: url(../img/logo.png);
     background-size: 80px;
     background-position: right;
     background-repeat: no-repeat;
@@ -89,7 +89,7 @@ h1 {
 }
 
 /* Knopf am Ende */
-#button {
+button {
     margin: 0 auto;
     margin-top: 3vh;
     width: 100px;
@@ -101,10 +101,29 @@ h1 {
     -webkit-transition-duration: 0.4s;
 }
 
-#button:hover {
+button {
+    margin: 0 auto;
+    margin-top: 3vh;
+    width: 100px;
+    height: 50px;
+    BORDER: 4px solid black;
+    background-color: white;
+    font-weight: 900;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s;
+}
+
+#Button_Container {
+    height: 100px;
+    width: 100px;
+    margin: 0 auto;
+    margin-top: 15px;
+}
+
+button:hover {
     background-color: black;
     color: white;
-    background-image: url(img/alpaka.gif);
+    background-image: url(../img/alpaka.gif);
     background-size: contain;
 }
 
