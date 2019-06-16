@@ -88,10 +88,10 @@ axios
         else {
             this.question = "Auswertung!";
             // Daten los schicken!
-            axios.post('127.0.0.1:5000/fragebogen/',    //10.23.5.55
+            axios.post("http://10.23.4.130:3000",    
     this.daten, // the data to post
     { headers: {
-      'Content-type': 'application/x-www-form-urlencoded',
+      'Content-type': 'text/plain',
       }
     }).then(response => {
         var endText = document.createElement("a");
@@ -113,3 +113,5 @@ computed: {
 
 })
 }
+
+//$("#Alpaka_Button").click(function)
