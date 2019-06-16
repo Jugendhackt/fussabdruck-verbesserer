@@ -88,7 +88,7 @@ axios
         else {
             this.question = "Auswertung!";
             // Daten los schicken!
-            axios.post("http://10.23.4.130:3000",    
+            axios.post(url+ "/antworten",    
     this.daten, // the data to post
     { headers: {
       'Content-type': 'text/plain',
@@ -113,5 +113,3 @@ computed: {
 
 })
 }
-
-//$("#Alpaka_Button").click(function)

@@ -120,6 +120,14 @@ button {
     margin-top: 15px;
 }
 
+#Alpaka_Animation {
+    background-image: url(../img/Alpaka_Animation.jpg);
+    background-size: 800px;
+    background-color: black;
+    height: 120px;
+    width: 120px;
+}
+
 button:hover {
     background-color: black;
     color: white;
