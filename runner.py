@@ -62,9 +62,6 @@ def fragebogen_generieren():
 
     return fragebogen
 
-#def antwort_generieren():
-#    antworten[]
-
 @app.route('/fragebogen/')
 def fragebogen_senden():
     d = get_data()
