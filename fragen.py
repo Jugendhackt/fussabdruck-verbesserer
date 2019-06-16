@@ -3,6 +3,7 @@ class Question:
     def __init__(self, fragg,abdruck = 0):
         self.frage = fragg
         self.abdruck = abdruck
+        self.hint = None
         self.answers=[]
 
     def add_answer(self, answer, faktor=1):
