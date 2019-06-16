@@ -28,7 +28,8 @@ mounted: function(){
 
 methods: {
     alpaka_button () {
-        classList.toogle('Alpaka_Animation'); 
+        var element = document.getElementById("Alpaka_Animation");
+        element.classList.toggle("rotate");
     },
     save() {
         var answers = [];
