@@ -82,3 +82,28 @@ def get_data():
     return {
         'data':result
     }
+
+def get_results(answers):
+    position = 0
+    abdruck = 0
+    hinweise = []
+    questions = fragebogen_generieren()
+    for Element in answers:
+        if type(Element) is list:
+            for senf in Element:
+                abdruck += questions[position].getAbdruck(senf)
+                hinweise.append(questions[position].gethints(senf))
+        else:
+            abdruck += questions[position].getAbdruck(Element)
+            hinweise.append(questions[position].gethints(Element))
+        position += 1
+    text = 'Ihr Abdruck beträgt ' + abdruck + ' Tonnen CO2 pro Jahr\n' 
+    text += 'Tipps zum verkleinern Ihres Fußabdrucks:\n'
+    for tipp in hinweise:
+        text += tipp +'\n'
+    return text
+
+@app.route('/antworten/', methods=['GET','POST'])
+def antworten_verarbeiten():
+    print(request.get_json())
+    return 'ok', 200
