@@ -25,7 +25,7 @@
 
 /* Allgemeines */
 body {
-    background-image: url(img/lama.gif);
+    background-image: url(../img/lama.gif);
     background-size: 60px 60px;
     max-width: 65em;
     margin: 0 auto;
@@ -45,7 +45,7 @@ h1 {
 
 
 #logo {
-    background-image: url(img/logo.png);
+    background-image: url(../img/logo.png);
     background-size: 80px;
     background-position: right;
     background-repeat: no-repeat;
@@ -104,7 +104,7 @@ h1 {
 #button:hover {
     background-color: black;
     color: white;
-    background-image: url(img/alpaka.gif);
+    background-image: url(../img/alpaka.gif);
     background-size: contain;
 }
 
