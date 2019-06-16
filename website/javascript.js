@@ -29,7 +29,7 @@ mounted: function(){
 methods: {
     alpaka_button () {
         var element = document.getElementById("Alpaka_Animation");
-        element.classList.toggle("rotate");
+        element.classList.toggle("rotate-active");
     },
     save() {
         var answers = [];
@@ -89,7 +89,7 @@ axios
         else {
             this.question = "Auswertung!";
             // Daten los schicken!
-            axios.post(url+ "/antworten",    
+            axios.post(url+ "/antworten/",    
     this.daten, // the data to post
     { headers: {
       'Content-type': 'text/plain',
