@@ -130,11 +130,12 @@ button {
     margin-left: 20px;
 }
 
-.rotate {
+.rotate-active {
     animation: none;
+    visibility: hidden;
 }
 
-.rotate-active {
+.rotate {
     animation: rotation 2s infinite linear;
 }
   
