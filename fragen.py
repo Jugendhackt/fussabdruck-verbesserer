@@ -29,6 +29,10 @@ class Question:
     def getAbdruck (self, answer_id):
         answer = self.answers[answer_id]
         return self.abdruck * answer.faktor
+    
+    def getAnswerHint (self, answer_id):
+        answer = self.answers[answer_id]
+        return answer.hint
 
 
 class Answer:

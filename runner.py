@@ -92,10 +92,10 @@ def get_results(answers):
         if type(Element) is list:
             for senf in Element:
                 abdruck += questions[position].getAbdruck(senf)
-                hinweise.append(questions[position].gethints(senf))
+                hinweise.append(questions[position].getAnswerHint(senf))
         else:
             abdruck += questions[position].getAbdruck(Element)
-            hinweise.append(questions[position].gethints(Element))
+            hinweise.append(questions[position].getAnswerHint(Element))
         position += 1
     text = 'Ihr Abdruck beträgt ' + abdruck + ' Tonnen CO2 pro Jahr\n' 
     text += 'Tipps zum verkleinern Ihres Fußabdrucks:\n'
@@ -106,4 +106,4 @@ def get_results(answers):
 @app.route('/antworten/', methods=['GET','POST'])
 def antworten_verarbeiten():
     print(request.get_json())
-    return 'ok', 200
+    return get_results(request.get_json())
