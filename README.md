@@ -1,9 +1,9 @@
 # fussabdruck-verbesserer
 Hier entsteht ein Quiz, bei dem man den eigenen Resourcen-Verbrauch berechnen kann.
 
-## BEnutzung 
+## Benutzung 
 
-Zum Betrieb der Wbsite wird python 3 benötigt und muss auf dem Rechner installiert sein.
+Zum Betrieb der Website wird Python 3 benötigt und muss auf dem Rechner installiert sein.
 Zudem muss Flask installiert sein.
 
     pip install Flask 
