@@ -31,7 +31,7 @@ def fragebogen_generieren():
     frage.add_answer('mehrmals wöchentlich', faktor = 1)
     frage.add_answer('einmal die Woche', faktor = 0.8)
     frage.add_answer('nie', faktor = 0.7)
-    frage.add_hint("Ihr Fleisch kommt von Tieren die CO2 prodozieren.")
+    frage.add_hint("Ihr Fleisch kommt von Tieren die CO2 produzieren.")
     fragebogen.append(frage)
 
     frage = fragen.Question('Worauf achten Sie bei der Anschaffung neuer Konsumgüter?', 1)
@@ -45,7 +45,7 @@ def fragebogen_generieren():
     frage.add_answer('sparsam', faktor = 0.95)
     frage.add_answer('durchschnittlich')
     frage.add_answer('großzügig', faktor = 1.05, hint="Durch vieles kaufen werden auch viele Ressourcen verbraucht.Durch weniger kaufen könnten sie Ressourcen sparen.")
-    frage.add_hint("Je mehr man verbraucht desto mehr CO2 entsteht.")
+    frage.add_hint("Je mehr man verbraucht desto mehr CO2 entsteht durch Produktion.")
     fragebogen.append(frage)
 
     frage = fragen.Question('Sind Sie Halter*In eines Haustieres?', 1)
@@ -54,7 +54,7 @@ def fragebogen_generieren():
     frage.add_answer('Katze', faktor=2)
     frage.add_answer('Alpaka', faktor = 0,hint="Alpaka ist immer die richtige antwort!")
     frage.add_answer('Nein', faktor = 0, hint="Tiere verbrauchen genauso wie Menschen CO2 und diese können wir auch nicht abschaffen, also legen sie sich ein Tier zu.")
-    frage.add_hint("Auch wenn Tiere CO2 prodozieren ist es kein grund sie abzuschaffen.")
+    frage.add_hint("Auch wenn Tiere CO2 prodozieren ist es kein Grund sie abzuschaffen.")
     fragebogen.append(frage)
 
     frage = fragen.Question('Auf wievielen Quadratmetern Wohnfläche leben Sie?', 1)
