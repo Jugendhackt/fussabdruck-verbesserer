@@ -113,5 +113,3 @@ computed: {
 
 })
 }
-
-//$("#Alpaka_Button").click(function)
