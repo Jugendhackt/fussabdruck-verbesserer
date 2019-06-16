@@ -30,6 +30,8 @@ methods: {
     alpaka_button () {
         var element = document.getElementById("Alpaka_Animation");
         element.classList.toggle("rotate-active");
+        var element = document.getElementById("Alpaka_Animation_l");
+        element.classList.toggle("rotate-active");
     },
     save() {
         var answers = [];
