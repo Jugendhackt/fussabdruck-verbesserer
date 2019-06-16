@@ -1,5 +1,6 @@
 from flask import Flask, request, send_from_directory, jsonify
 import fragen
+import json
 
 app = Flask(__name__)
 
@@ -83,10 +84,12 @@ def get_data():
         'data':result
     }
 
-def get_results(answers):
+def get_results(data):
+    answers = json.loads(data)
     position = 0
     abdruck = 0
     hinweise = []
+    print(answers)
     questions = fragebogen_generieren()
     for Element in answers:
         if type(Element) is list:
@@ -97,13 +100,13 @@ def get_results(answers):
             abdruck += questions[position].getAbdruck(Element)
             hinweise.append(questions[position].getAnswerHint(Element))
         position += 1
-    text = 'Ihr Abdruck beträgt ' + abdruck + ' Tonnen CO2 pro Jahr\n' 
+    text = 'Ihr Abdruck beträgt ' + str(abdruck) + ' Tonnen CO2 pro Jahr\n' 
     text += 'Tipps zum verkleinern Ihres Fußabdrucks:\n'
     for tipp in hinweise:
-        text += tipp +'\n'
+        if tipp is not None:
+            text += tipp +'\n'
     return text
 
 @app.route('/antworten/', methods=['GET','POST'])
 def antworten_verarbeiten():
-    print(request.get_json())
-    return get_results(request.get_json())
+    return get_results(request.data)

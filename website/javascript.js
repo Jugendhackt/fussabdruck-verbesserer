@@ -52,9 +52,9 @@ methods: {
 this.zaehler = this.zaehler + 1; 
 this.save();    
 document.getElementById("Antworten").innerHTML = "";
-var url = "http://127.0.0.1:5000/fragebogen/";
+var url = "http://127.0.0.1:5000";
 axios
-.get(url)
+.get(url+"/fragebogen/")
 .then(response => {
     console.log('JSON Datei: ', response);
     console.log('zaehler: ', this.zaehler);
