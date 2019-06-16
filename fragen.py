@@ -1,12 +1,12 @@
 class Question:
 
-    def __init__(self, fragg,abdruck = 0):
+    def __init__(self, fragg, abdruck = 0):
         self.frage = fragg
         self.abdruck = abdruck
         self.answers=[]
 
-    def add_answer(self, answer, faktor=1):
-        self.answers.append(Answer(answer, faktor = faktor))
+    def add_answer(self, answer, faktor=1,hint=None):
+        self.answers.append(Answer(answer, faktor = faktor,hint=hint))
 
     def __str__(self):
         return self.frage + ' (' + ", ".join(self.answers) + ')'
@@ -28,9 +28,10 @@ class Question:
 
 class Answer:
 
-    def __init__(self, title, faktor=1):
+    def __init__(self, title, faktor=1,hint=None):
         self.title = title
         self.faktor = faktor
+        self.hint = hint
 
     def __str__(self):
         return self.title

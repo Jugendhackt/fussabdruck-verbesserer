@@ -21,35 +21,35 @@ def send_resource(path):
 def fragebogen_generieren():
     fragebogen = []
     frage = fragen.Question("Treiben Sie Sport?", 0.35)
-    frage.add_answer('ja', faktor = 1.1)
+    frage.add_answer('ja', faktor = 1.1,hint="Totz CO2 ausstos, treiben ie weiter Sport.")
     frage.add_answer('nein')
     fragebogen.append(frage)
 
     frage = fragen.Question('Wie oft essen Sie Fleisch?', 0.78)
-    frage.add_answer('täglich', faktor = 1.3)
+    frage.add_answer('täglich', faktor = 1.3,hint="Sie könnten versuchen einen Fleisch freien Tag einzuführen.")
     frage.add_answer('mehrmals wöchentlich', faktor = 1)
     frage.add_answer('einmal die Woche', faktor = 0.8)
     frage.add_answer('nie', faktor = 0.7)
     fragebogen.append(frage)
 
-    frage = fragen.Question('Worauf achten sie bei der Anschaffung neuer Konsumgüter?', 1)
+    frage = fragen.Question('Worauf achten Sie bei der Anschaffung neuer Konsumgüter?', 1)
     frage.add_answer('Langlebigkeit', faktor = 0.9)
-    frage.add_answer('Funktionalität')
-    frage.add_answer('günstige Preise', faktor = 1.1)
+    frage.add_answer('Funktionalität',hint= "Trotz Funktionalität können sie noch auf Langlebigkeit achten.")
+    frage.add_answer('günstige Preise', faktor = 1.1, hint="Meistens halten günstige Produkte nicht sehr lange.")
     fragebogen.append(frage)
 
     frage = fragen.Question('Wie schätzen sie ihr Kaufverhalten ein?', 1)
     frage.add_answer('sparsam', faktor = 0.9)
     frage.add_answer('durchschnittlich')
-    frage.add_answer('großzügig', faktor = 1.1)
+    frage.add_answer('großzügig', faktor = 1.1, hint="Durch vieles kaufen werden auch viele Ressourcen verbraucht.Durch weniger kaufen könnten sie Ressourcen sparen.")
     fragebogen.append(frage)
 
     frage = fragen.Question('Sind Sie Halter*In eines Haustieres?', 1)
     frage.add_answer('kleiner Hund', faktor = 1.8)
     frage.add_answer('großer Hund', faktor = 3)
     frage.add_answer('Katze', faktor=2)
-    frage.add_answer('Alpaka', faktor = 6)
-    frage.add_answer('Nein', faktor = 0)
+    frage.add_answer('Alpaka', faktor = 0,hint="Alpaka ist immer die richtige antwort!")
+    frage.add_answer('Nein', faktor = 0, hint="Tiere verbrauchen genauso wie Menschen CO2 und diese können wir auch nicht abschaffen, also legen sie sich ein Tier zu.")
     fragebogen.append(frage)
 
     frage = fragen.Question('Auf wievielen Quadratmetern Wohnfläche leben Sie?', 1)
