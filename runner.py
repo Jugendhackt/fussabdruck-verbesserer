@@ -33,15 +33,15 @@ def fragebogen_generieren():
     fragebogen.append(frage)
 
     frage = fragen.Question('Worauf achten Sie bei der Anschaffung neuer Konsumgüter?', 1)
-    frage.add_answer('Langlebigkeit', faktor = 0.9)
+    frage.add_answer('Langlebigkeit', faktor = 0.95)
     frage.add_answer('Funktionalität',hint= "Trotz Funktionalität können sie noch auf Langlebigkeit achten.")
-    frage.add_answer('günstige Preise', faktor = 1.1, hint="Meistens halten günstige Produkte nicht sehr lange.")
+    frage.add_answer('günstige Preise', faktor = 1.05, hint="Meistens halten günstige Produkte nicht sehr lange.")
     fragebogen.append(frage)
 
     frage = fragen.Question('Wie schätzen sie ihr Kaufverhalten ein?', 1)
-    frage.add_answer('sparsam', faktor = 0.9)
+    frage.add_answer('sparsam', faktor = 0.95)
     frage.add_answer('durchschnittlich')
-    frage.add_answer('großzügig', faktor = 1.1, hint="Durch vieles kaufen werden auch viele Ressourcen verbraucht.Durch weniger kaufen könnten sie Ressourcen sparen.")
+    frage.add_answer('großzügig', faktor = 1.05, hint="Durch vieles kaufen werden auch viele Ressourcen verbraucht.Durch weniger kaufen könnten sie Ressourcen sparen.")
     fragebogen.append(frage)
 
     frage = fragen.Question('Sind Sie Halter*In eines Haustieres?', 1)
@@ -61,9 +61,6 @@ def fragebogen_generieren():
     fragebogen.append(frage)
 
     return fragebogen
-
-#def antwort_generieren():
-#    antworten[]
 
 @app.route('/fragebogen/')
 def fragebogen_senden():

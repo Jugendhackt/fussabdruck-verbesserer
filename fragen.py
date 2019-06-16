@@ -3,10 +3,14 @@ class Question:
     def __init__(self, fragg, abdruck = 0):
         self.frage = fragg
         self.abdruck = abdruck
+        self.hint = None
         self.answers=[]
 
     def add_answer(self, answer, faktor=1,hint=None):
         self.answers.append(Answer(answer, faktor = faktor,hint=hint))
+
+    def add_hint(self,hint):
+        self.hint = hint
 
     def __str__(self):
         return self.frage + ' (' + ", ".join(self.answers) + ')'
@@ -18,7 +22,8 @@ class Question:
 
         return  {
             'frage':self.frage,
-            'antworten':answers
+            'antworten':answers, 
+            'hint':self.hint
         }
 
     def getAbdruck (self, answer_id):
