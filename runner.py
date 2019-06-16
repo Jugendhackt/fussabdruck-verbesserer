@@ -27,21 +27,21 @@ def fragebogen_generieren():
 
     frage = fragen.Question('Wie oft essen Sie Fleisch?', 0.78)
     frage.add_answer('täglich', faktor = 1.3)
-    frage.add_answer('mehrmals wöchentlich', faktor = 1)
+    frage.add_answer('mehrmals wöchentlich')
     frage.add_answer('einmal die Woche', faktor = 0.8)
     frage.add_answer('nie', faktor = 0.7)
     fragebogen.append(frage)
 
     frage = fragen.Question('Worauf achten sie bei der Anschaffung neuer Konsumgüter?', 1)
-    frage.add_answer('Langlebigkeit', faktor = 0.9)
+    frage.add_answer('Langlebigkeit', faktor = 0.95)
     frage.add_answer('Funktionalität')
-    frage.add_answer('günstige Preise', faktor = 1.1)
+    frage.add_answer('günstige Preise', faktor = 1.05)
     fragebogen.append(frage)
 
     frage = fragen.Question('Wie schätzen sie ihr Kaufverhalten ein?', 1)
-    frage.add_answer('sparsam', faktor = 0.9)
+    frage.add_answer('sparsam', faktor = 0.95)
     frage.add_answer('durchschnittlich')
-    frage.add_answer('großzügig', faktor = 1.1)
+    frage.add_answer('großzügig', faktor = 1.05)
     fragebogen.append(frage)
 
     frage = fragen.Question('Sind Sie Halter*In eines Haustieres?', 1)
@@ -61,9 +61,6 @@ def fragebogen_generieren():
     fragebogen.append(frage)
 
     return fragebogen
-
-#def antwort_generieren():
-#    antworten[]
 
 @app.route('/fragebogen/')
 def fragebogen_senden():
