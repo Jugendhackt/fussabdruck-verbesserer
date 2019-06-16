@@ -18,7 +18,7 @@ daten:[],
 created: function(){
     this.fragen();
     this.save();
-    this.alpaka();
+    this.alpaka_button();
 
 },
 
@@ -27,8 +27,8 @@ mounted: function(){
 },
 
 methods: {
-    alpaka() {
-
+    alpaka_button () {
+        classList.toogle('Alpaka_Animation'); 
     },
     save() {
         var answers = [];

@@ -120,7 +120,7 @@ button {
     margin-top: 15px;
 }
 
-#Alpaka_Animation {
+.Alpaka_Animation {
     background-image: url(../img/Alpaka_Animation.jpg);
     background-size: 800px;
     background-color: black;
