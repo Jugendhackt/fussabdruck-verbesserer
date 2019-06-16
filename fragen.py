@@ -8,6 +8,9 @@ class Question:
     def add_answer(self, answer, faktor=1):
         self.answers.append(Answer(answer, faktor = faktor))
 
+    def add_hint(self,hint):
+        self.hint = hint
+
     def __str__(self):
         return self.frage + ' (' + ", ".join(self.answers) + ')'
 
@@ -18,7 +21,8 @@ class Question:
 
         return  {
             'frage':self.frage,
-            'antworten':answers
+            'antworten':answers, 
+            'hint':self.hint
         }
 
     def getAbdruck (self, answer_id):
